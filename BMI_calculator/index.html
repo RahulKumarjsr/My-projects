@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="icon" href="https://e7.pngegg.com/pngimages/12/233/png-clipart-bodybuilding-bodybuilding-thumbnail.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="wrapper">
+        <h1>BMI Calculator</h1>
+        <div>
+            <label for="weight">Weight : </label>
+            <input type="number"  id="weight" placeholder="Enter weight in Kg">
+        </div>
+        
+        <div>
+            <label for="height">Height : </label>
+            <input type="number" id="height" placeholder="Enter height in Cm"/>  
+        </div>
+         
+        <button id="calcbtn">Calculate</button>
+    </div>
+
+    <div id="result">
+        <h2>Your BMI is : <span id="bmi"></span></h2>
+        <h1 id="emotion">oops!</h1>
+        <h1 id="emotion2">Congratulation!</h1>
+
+        <h1 >You are : <span id="status"></span></h1>
+        
+    </div>
+    
+</body>
+</html>
+<script src="script.js"></script>
