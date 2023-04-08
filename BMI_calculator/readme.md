@@ -1,4 +1,4 @@
-Link to the calculator => https://bright-phoenix-f5d0b9.netlify.app/
+Link to the calculator => https://bmiclaculator.netlify.app/
 
 ![Home_page](Image_1.png)
 ![Below_normal](Image_2.png)
