@@ -1,0 +1,77 @@
+body{
+    text-align: center;
+    background-color: aliceblue;
+}
+form{
+    display: block;
+    text-align: center;
+    background-color: rgb(227, 236, 246);
+    width: 30vw;
+    /* border: 2px solid blue; */
+    margin: 15px auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 15px ;
+}
+form input,select{
+    display: block;
+    margin: 8px auto;
+    width: 90%;
+    font-size: 16px;
+    padding: 8px 15px;
+    border: 3px solid #e4e4e4;
+    border-radius: 15px;
+}
+
+
+#submitBtn{
+    background-color: rgb(169, 101, 232);
+    font-size: 18px;
+    font-weight: bolder;
+    width: 50%;
+}
+#submitBtn:hover{
+scale: 1.2;
+}
+#search{
+    display: block;
+    margin: 8px auto;
+    width: 35vw;
+    font-size: 16px;
+    padding: 8px 15px;
+    border: 3px solid #e2e2e2;
+    border-radius: 15px;
+
+}
+label{
+    display: inline;
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+}
+#filter{
+    display: inline;
+    width: 25vw;
+    text-align: center;
+}
+table{
+margin: auto;
+border-collapse: collapse;
+}
+th{
+    border: 1.3px solid rgb(70, 68, 68);
+    width: 7rem;
+    background-color: rgb(234, 234, 158);
+    font-size: 16px;
+}
+td{
+    border: 1.3px solid rgb(70, 68, 68);
+    width: 7rem;
+    background-color: azure;
+    padding: 4px 2px;
+}
+table #delete{
+    background-color: rgb(219, 80, 80);
+}
+body>h1{
+    color: blue;
+}

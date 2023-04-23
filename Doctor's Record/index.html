@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Masai Doctor Records</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Doctor's Record</h1>
+    <!-- Use this form for data input  -->
+    <form>
+      <input placeholder="Name" type="text" id="name" />
+      <input placeholder="Doctor ID" type="text" id="doctor_id" />
+      <select id="specialization">
+        <option value="">Select Specialization</option>
+        <option value="Dermatologist">Dermatologist</option>
+        <option value="Dentist">Dentist</option>
+        <option value="Gynecologist">Gynecologist</option>
+      </select>
+      <input placeholder="Experience" type="number" id="experience" />
+      <input placeholder="Email" type="email" id="email" />
+      <input placeholder="Mobile No." type="number" id="mobile" />
+      <input type="submit" value="Submit" id="submitBtn" />
+    </form>
+
+    <input type="text" id="search" placeholder="Search here..." onkeyup="searchData()"  onchange="(e)=>{e.target.value}"/>
+
+    <!-- Use this Select tag for filter part  -->
+    <label for="filter" >Filter the list:</label>
+    <select id="filter" onchange="handleFilter()">
+      <option value="">Select Specialization</option>
+      <option value="Dermatologist">Dermatologist</option>
+      <option value="Dentist">Dentist</option>
+      <option value="Gynecologist">Gynecologist</option>
+    </select>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Doctor ID</th>
+          <th>Specialization</th>
+          <th>Experience in Years</th>
+          <th>Email</th>
+          <th>Mobile No</th>
+          <th>Role</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Append Rows here using JS & DOM  -->
+      </tbody>
+    </table>
+  </body>
+  
+  <script>
+ document.querySelector("form").addEventListener("submit", submitForm)
+
+let docArr =  JSON.parse(localStorage.getItem("doctor")) || []
+ displayDetail()
+
+ function displayDetail(data = docArr){
+  let tbody = document.querySelector("tbody")
+   tbody.textContent = ""   //whenever the item is added then the earlier items will not apper again
+
+  data.map((elem, index)=>{
+    let tr = document.createElement("tr")
+
+    let td1 = document.createElement("td")
+    td1.textContent = elem.name
+
+    let td2 = document.createElement("td")
+    td2.textContent = elem.id
+
+    let td3 = document.createElement("td")
+    td3.textContent = elem.specialization
+
+    let td4 = document.createElement("td")
+    td4.textContent = elem.experience
+
+    let td5 = document.createElement("td")
+    td5.textContent = elem.email
+
+    let td6 = document.createElement("td")
+    td6.textContent = elem.mobile
+
+    let td7 = document.createElement("td")
+    if(elem.experience>5){
+      td7.textContent = "Senior"
+    }else if(elem.experience>=2 && elem.experience<=5){
+      td7.textContent = "Junior"
+    }else{
+      td7.textContent = "Trainee"
+    }
+
+    let td8 = document.createElement("td")
+    td8.textContent = "Delete"
+    td8.style.backgroundColor = "red"
+    td8.addEventListener("click", () =>{
+       deleteRow(index) 
+    })
+
+    tr.append(td1, td2, td3, td4, td5, td6, td7, td8)
+    tbody.append(tr)
+  })
+  
+ }
+
+ function searchData(){
+  let search = document.getElementById("search").value.toUpperCase()
+  
+  let filterSearch = docArr.filter((elem)=>{
+    return (
+      elem.name.toUpperCase().includes(search)||
+      elem.id.toUpperCase().includes(search)||
+      elem.specialization.toUpperCase().includes(search)||
+      elem.experience.toUpperCase().includes(search)||
+      elem.email.toUpperCase().includes(search)||
+      elem.mobile.toString().includes(search)
+    )
+  })
+  displayDetail(filterSearch)
+ }
+
+
+ function submitForm(){
+  event.preventDefault()
+  let name = document.getElementById("name").value
+  let id = document.getElementById("doctor_id").value
+  let specialization = document.getElementById("specialization").value
+  let experience = document.getElementById("experience").value
+  let email = document.getElementById("email").value
+  let mobile = document.getElementById("mobile").value
+
+  let obj = {
+    name: name,
+    id : id,
+    specialization: specialization,
+    experience: experience,
+    email: email,
+    mobile: mobile
+  }
+  if (!name) {
+    alert("Please Enter Doctor's Name")
+    return
+  }
+
+  docArr.push(obj)
+  localStorage.setItem("doctor", JSON.stringify(docArr))
+   
+  displayDetail()
+ }
+
+ function deleteRow(index){
+  
+  let remaining = docArr.splice(index, 1)  
+  localStorage.setItem("doctor", JSON.stringify(docArr))
+   
+   displayDetail()
+ }
+
+
+ function handleFilter(){
+  let selected  = document.getElementById("filter").value
+
+  let filterData = docArr.filter((elem) => {
+    if(selected=="Dermatologist"){
+      return elem.specialization == "Dermatologist"
+    }else if(selected == "Dentist"){
+      return elem.specialization == "Dentist"
+    }else if(selected == "Gynecologist"){
+      return elem.specialization == "Gynecologist"
+    }else{
+      return true
+    }
+  })
+
+  displayDetail(filterData)
+ }
+  </script>
+</html>
