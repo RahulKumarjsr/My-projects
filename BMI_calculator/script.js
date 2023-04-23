@@ -1,10 +1,13 @@
 calcbtn.addEventListener('click', (e)=>{
+    //accessing the input value of height and weight
     let height = document.getElementById("height").value
     let weight = document.getElementById("weight").value
 
+   /**calculating BMI using formula and fixing the decimal value to 1 place */
     let BMI = (weight/((height/100)**2))
        BMI = (BMI.toFixed(1))
 
+       /**Displaying the result */
     document.getElementById("bmi").textContent = BMI
      
     console.log(BMI)
@@ -15,7 +18,7 @@ calcbtn.addEventListener('click', (e)=>{
     let emotion = document.getElementById("emotion")
     let status = document.getElementById("status")
     let status2 = document.getElementById("status2")
-
+    /**The BMI of user is compared with the BMI chart and the status is displayed on the screen */
     if(BMI<16){ 
 
       status.textContent = "Severly Thin"
@@ -51,7 +54,7 @@ calcbtn.addEventListener('click', (e)=>{
         status.textContent = "Obese Class III"
 
     }
-
+/**See in this part we, based on the status of BMI the happy or sad emotion is expressed and to do that one is blocked in display and another is shown. (see style.css to understand more) */
    if(status.textContent === "Normal Weight"){
     emotion2.style.display = "block"
     emotion.style.display = "none"
