@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Inventory Management</title>
+  <style>
+      /* Write all necessery css here  */
+  </style>
+</head>
+
+<body>
+  <div id="create">
+    <h1>Inventory Manager</h1>
+    <form>
+      <input placeholder="Product Name" id="name" type="text" value="" onchange="(e)=>{e.target.value}"/>
+      <select id="category">
+        <option value="">Product Catagory</option>
+        <option value="Grocery">Grocery</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Home Appliances">Home Appliances</option>
+      </select>
+      <input type="text" id="brand" placeholder="Brand" />
+      <input placeholder="Product Price" id="price" type="number" value="0" onchange="(e)=>{e.target.value}"/>
+      <select id="deliveredBy">
+        <option value="">Delivered By</option>
+        <option value="Plane">Plane</option>
+        <option value="Ship">Ship</option>
+        <option value="Delivery Van">Delivery Van</option>
+      </select>
+      <input id="submitBtn" type="submit" value="Add Inventory" />
+    </form>
+  </div>
+  
+  <input  type="text" id="search" placeholder="Search..." onkeyup="searchData()"  onchange="(e)=>{e.target.value}"/>
+  <!-- This is the h1 tag for showing the total price  -->
+  <h1 id="total-price">Total Price:- <span>0</span> </h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Serial no.</th>
+        <th>Product Name</th>
+        <th>Catagory</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th>Delivered By</th>
+        <th>Price Segment</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Here you will append the data as tr-td when the form gets submitted  -->
+    </tbody>
+  </table>
+</body>
+<script src="script.js"></script>
+
+</html>
