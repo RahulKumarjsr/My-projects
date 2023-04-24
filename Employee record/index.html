@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employee Records</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Employee Rocord </h1>
+    <!-- Use this form for taking the inputs  -->
+    <form>
+      <input placeholder="Name" type="text" id="name" />
+      <input placeholder="Employee ID" type="text" id="employee_id" />
+      <select id="department">
+        <option value="">Select Department</option>
+        <option value="HR">HR</option>
+        <option value="Finance">Finance</option>
+        <option value="Engineering">Engineering</option>
+      </select>
+      <input placeholder="Experience" type="number" id="experience" />
+      <input placeholder="Email" type="email" id="email" />
+      <input placeholder="Mobile No." type="number" id="mobile" />
+      <input type="submit" id="submit" value="Submit" />
+    </form>
+    
+    <input type="text" id="search" placeholder="Search here..." onkeyup="searchData()"  onchange="(e)=>{e.target.value}"/>
+
+    <!-- Use this select tag for filtering  -->
+    <label for="filter">Filter from here:</label>
+    <select id="filter" onchange="handleFilter()">
+      <option value="">Select Department</option>
+      <option value="HR">HR</option>
+      <option value="Finance">Finance</option>
+      <option value="Engineering">Engineering</option>
+    </select>
+    <table>
+      <thead>
+        <tr>
+          <th>Serial no.</th>
+          <th>Name</th>
+          <th>Employee ID</th>
+          <th>Department</th>
+          <th>Experience in Years</th>
+          <th>Email</th>
+          <th>Mobile No</th>
+          <th>Role</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Append Rows here using JS & DOM  -->
+      </tbody>
+    </table>
+  </body>
+  <script src="script.js"></script>
+</html>

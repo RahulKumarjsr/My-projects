@@ -1,0 +1,91 @@
+body{
+    background-color: bisque;
+    text-align: center;
+}
+
+h1{
+    color: blue;
+}
+
+form{
+    padding: 20px;
+    width: 25vw;
+    margin: 20px auto;
+    text-align: center;
+    background-color: rgb(238, 197, 147);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    
+}
+
+form input,select{
+    display: block;
+    padding: 6px 15px;
+    border: 2px solid #d7d7d7;
+    margin: 10px auto;
+    width: 90%;
+    border-radius: 20px;
+}
+body form #submit{
+    width: 50%;
+    background-color: bisque;
+    font-size: 17px;
+    font-weight: bolder;
+}
+body form #submit:hover{
+    scale: 1.1;
+}
+
+#search{
+    display: block;
+    margin: 15px auto;
+    width: 40vw;
+    padding: 7px 15px;
+    border: 2px solid #d7d7d7;
+    border-radius: 20px;
+}
+#search:hover{
+    scale: 1.1;
+}
+
+label{
+    display: inline;
+    font-size: 16px;
+    font-weight: bold;
+    color: blue;
+}
+
+#filter{
+    width: 30vw;
+    display: inline;
+    margin: 15px auto;
+    border: 2px solid #d7d7d7;
+    padding: 6px;
+    
+}
+#filter{
+    scale: 1.1;
+}
+table{
+    width: 60vw;
+    margin: 15px auto;
+    background-color: rgb(245, 227, 206);
+    border-collapse: collapse;
+    border: 3px solid rgb(245, 203, 152);
+    
+}
+
+th{
+    border: 1.5px solid #d7d7d7;
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+    font-weight: bolder;
+    padding: 6px 4px;
+}
+td{
+    border: 1.5px solid #d7d7d7;
+    font-size: 14px;
+    padding: 3px 2px;
+    font-size: 16px;
+    font-weight: bold;
+}
